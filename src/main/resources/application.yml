@@ -1,0 +1,6 @@
+spring:
+  redis:
+    port: 6379
+    password:
+    host: localhost
+    timeToLive: 60
