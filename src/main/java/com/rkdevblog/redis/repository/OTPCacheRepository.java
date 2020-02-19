@@ -1,6 +1,6 @@
-package com.tokoin.otp.repository;
+package com.rkdevblog.redis.repository;
 
-import com.tokoin.otp.exception.OTPServiceException;
+import com.rkdevblog.redis.exception.OTPServiceException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.redis.core.StringRedisTemplate;
@@ -11,7 +11,7 @@ import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Implementation of {@link CacheRepository)
+ * Implementation of {@link )
  */
 @Repository
 public class OTPCacheRepository implements CacheRepository {
@@ -39,7 +39,6 @@ public class OTPCacheRepository implements CacheRepository {
         try {
             valueOps.set(key, String.valueOf(value));
             redisTemplate.expire(key, ttl, TimeUnit.SECONDS);
-            // Caching runtime exception since specific exception is not defined
         } catch (RuntimeException e) {
             throw new OTPServiceException("Error while saving to cache ", e);
         }
@@ -60,7 +59,6 @@ public class OTPCacheRepository implements CacheRepository {
             } else {
                 return Optional.empty();
             }
-            // Caching runtime exception since specific exception is not defined
         } catch (RuntimeException e) {
             throw new OTPServiceException("Error while retrieving from the cache ", e);
         }
@@ -75,7 +73,6 @@ public class OTPCacheRepository implements CacheRepository {
     public void remove(String key) {
         try {
             redisTemplate.delete(key);
-            // Caching runtime exception since specific exception is not defined
         } catch (RuntimeException e) {
             throw new OTPServiceException("Error while removing from the cache ", e);
         }
