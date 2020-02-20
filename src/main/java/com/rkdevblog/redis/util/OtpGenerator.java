@@ -1,7 +1,6 @@
-package com.tokoin.otp.util;
+package com.rkdevblog.redis.util;
 
-import com.tokoin.otp.exception.OTPServiceException;
-import lombok.extern.slf4j.Slf4j;
+import com.rkdevblog.redis.exception.OTPServiceException;
 import org.springframework.stereotype.Component;
 
 import java.security.NoSuchAlgorithmException;
@@ -12,7 +11,6 @@ import java.util.Random;
  * Otp Generator
  */
 @Component
-@Slf4j
 public class OtpGenerator {
 
     private static final String DEFAULT_ALGORITHM = "SHA1PRNG";
@@ -29,7 +27,6 @@ public class OtpGenerator {
             Random random = SecureRandom.getInstance(DEFAULT_ALGORITHM);
             return LOWER_BOUND + random.nextInt(UPPER_BOUND);
         } catch (NoSuchAlgorithmException e) {
-            log.error("Invalid algorithm for generating otp", e);
             throw new OTPServiceException("Invalid algorithm for generating otp", e);
         }
     }

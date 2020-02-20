@@ -1,4 +1,4 @@
-package com.tokoin.otp.exception;
+package com.rkdevblog.redis.exception;
 
 /**
  * OtpCache Exception
