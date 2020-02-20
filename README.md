@@ -9,6 +9,7 @@ This is a sample spring-boot project to demonstrate redis cache with spring-boot
 ## How to Run
 
 - Clone the project
+- Configure Redis password in application.yml
 - Build the project  
 ```
 mvn clean install
