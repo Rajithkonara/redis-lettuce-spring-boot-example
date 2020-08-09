@@ -23,6 +23,17 @@ java -jar target/redis-0.0.1-SNAPSHOT.jar
 - Make sure your redis-server is up and running
 - Use the postman collection located in /src/main/resources directory to test the application.
 
+## Using docker
+
+- Build the project  
+```
+mvn clean install
+```
+- Run using docker-compose
+```
+docker-compose up --build 
+```
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
