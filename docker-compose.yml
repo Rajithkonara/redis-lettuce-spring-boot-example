@@ -1,0 +1,19 @@
+version: '3'
+services:
+  app:
+    container_name: spring-redis
+    image: spring-redis:v1
+    build: .
+    links:
+      - redis
+    ports:
+      - "8080:8080"
+    volumes:
+      - ~/docker/redis:/redis-service/logs
+  redis:
+    container_name: redis
+    image: redis:v1
+    build: ./redis
+    hostname: redis
+    ports:
+      - "6379:6379"
