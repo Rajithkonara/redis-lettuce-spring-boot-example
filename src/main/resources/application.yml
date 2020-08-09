@@ -1,6 +1,15 @@
 spring:
+  application:
+    name: redis-service
+
   redis:
     port: 6379
-    password:
-    host: localhost
+    password: konara
+    host: redis
     timeToLive: 60
+
+logging:
+  file:
+    path: redis-service/logs
+  level:
+    com.rkdevblog.redis: DEBUG
